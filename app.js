@@ -527,9 +527,11 @@ function setupInventoryPanel() {
 // 8. INTERACTIVE QUEST LOG (with LocalStorage)
 // --------------------------------------------------------
 let quests = [
-  { id: 1, title: "Master the Wasteland AI", desc: "Zintegruj zaawansowane modele językowe z codziennymi procesami pracy, w celu maksymalizacji efektywności operacyjnej.", status: "active" },
-  { id: 2, title: "Get your Bachelor title", desc: "Dokończ pisanie pracy licencjackiej i raz na zawsze pożegnaj się z UMK.", status: "hold" },
-  { id: 3, title: "Update Pip-Boy Terminal", desc: "Stwórz w pełni funkcjonalną kartę postaci o retro-futurystycznym interfejsie RobCo z lat 90.", status: "completed" }
+  { id: 1, title: "Face the boss: Bachelor title", desc: "Ukończ przygotowania do obrony i raz na zawsze pożegnaj się z UMK.", status: "active" },
+  { id: 2, title: "Infiltrate the Brotherhood of Steel", desc: "Opracuj 60 pytań na egzamin wstępny na studia II stopnia.", status: "active" },
+  { id: 3, title: "New Power Armor", desc: "Przerób ubrania kupione w lumpie na pasujące rozmiarem i stylem.", status: "hold" },
+  { id: 4, title: "Find the chip", desc: "Wykorzystaj własny prototyp ze Stitcha i rozwiąż swój problem braku idealnej simsowej apki.", status: "hold" },
+  { id: 5, title: "Update Pip-Boy Terminal", desc: "Stwórz funkcjonalną kartę postaci o retro-futurystycznym interfejsie RobCo z lat 90.", status: "completed" }
 ];
 
 function setupQuestsEngine() {
