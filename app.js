@@ -541,15 +541,30 @@ function setupQuestsEngine() {
   const addForm = document.getElementById('quest-add-form');
   const addInput = document.getElementById('quest-add-input');
 
-  // Load from local storage if exists
+  // ==========================
+  // QUEST DATA VERSION
+  // ==========================
+  const QUEST_VERSION = 5;
+
+  // Check if quest data version has changed
+  const savedVersion = localStorage.getItem('quest_version');
+
+  if (savedVersion !== String(QUEST_VERSION)) {
+    localStorage.removeItem('fallout_quests');
+    localStorage.setItem('quest_version', String(QUEST_VERSION));
+  }
+
+  // Load saved quests (if any)
   const saved = localStorage.getItem('fallout_quests');
+
   if (saved) {
     try {
       quests = JSON.parse(saved);
-    } catch(e) {
+    } catch (e) {
       console.error("Quests JSON parse error:", e);
     }
   }
+  
 
   function saveQuests() {
     localStorage.setItem('fallout_quests', JSON.stringify(quests));
