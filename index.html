@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHARACTER PROFILE</title>
+  <!-- Google Fonts: Orbitron (Futuristic Display) and Share Tech Mono (Perfect monospaced terminal font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen curve overlay & scanlines -->
+  <div class="screen-overlay"></div>
+  <div class="scanline-sweep"></div>
+
+  <!-- Main Terminal Casing -->
+  <div class="terminal-casing">
+    <div class="terminal-screen">
+      
+      <!-- BOOT SCREEN OVERLAY -->
+      <div id="boot-overlay" class="boot-overlay">
+        <div id="boot-console" class="boot-console">
+          <!-- Populated by JavaScript boot sequence -->
+        </div>
+        <div class="boot-footer">
+          <button id="btn-boot" class="btn-boot" style="opacity: 0; transition: opacity 0.5s ease;">BOOT SYSTEM</button>
+        </div>
+      </div>
+
+      <!-- PIP-BOY HEADER -->
+      <header class="pip-header">
+        <div class="pip-header-left">
+          <span class="pip-title">Pip-Boy 2000</span>
+          <span class="pip-header-accent">// ROBCO INDUSTRIES UNIFIED OS v3.12</span>
+        </div>
+        <div id="pip-clock" class="pip-time">00-00-0000 00:00:00</div>
+      </header>
+
+      <!-- NAVIGATION TABS -->
+      <nav class="pip-tabs">
+        <button class="pip-tab-btn active" data-view="view-stats">STAT</button>
+        <button class="pip-tab-btn" data-view="view-inv">INV</button>
+        <button class="pip-tab-btn" data-view="view-quests">DATA</button>
+        <button class="pip-tab-btn" data-view="view-models">SYS</button>
+      </nav>
+
+      <!-- VIEWPORT (MAIN CONTENT AREA) -->
+      <main class="pip-viewport">
+
+        <!-- VIEW 1: STATS (SPECIAL, SKILLS, TRAITS) -->
+        <section id="view-stats" class="pip-view active">
+          <div class="char-layout">
+            
+            <!-- Left Info Panel -->
+            <div class="char-info-col">
+              <div class="avatar-frame">
+                <img src="avatar.png" alt="Avatar: chvdanska" class="avatar-img">
+                <div class="avatar-scanlines"></div>
+              </div>
+              
+              <div class="name-class-box">
+                <h2 class="char-name">chvdanska</h2>
+                <div class="char-class">// CLASS: SILENT SPECIALIST</div>
+              </div>
+              
+              <p class="char-bio">
+                "War. War never changes... But AI does."
+              </p>
+            </div>
+
+            <!-- Right Stats Panels -->
+            <div class="char-stats-col">
+              
+              <!-- SPECIAL STATS -->
+              <div class="special-box">
+                <h3 class="panel-title">SPECIAL Stats</h3>
+                <div class="special-list">
+                  <div class="special-item" title="Strength (Siła): Wpływa na udźwig i siłę uderzenia">
+                    <span class="special-name">ST - Strength</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+                      <span class="special-val">4</span>
+                    </div>
+                  </div>
+                  <div class="special-item" title="Perception (Percepcja): Zmysły, celność i wyczucie otoczenia">
+                    <span class="special-name">PE - Perception</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+                      <span class="special-val">8</span>
+                    </div>
+                  </div>
+                  <div class="special-item" title="Endurance (Wytrzymałość): Odporność na obrażenia i zmęczenie">
+                    <span class="special-name">EN - Endurance</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 60%;"></div></div>
+                      <span class="special-val">6</span>
+                    </div>
+                  </div>
+                  <div class="special-item" title="Charisma (Charyzma): Wywieranie wpływu, perswazja i kontakty">
+                    <span class="special-name">CH - Charisma</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+                      <span class="special-val">4</span>
+                    </div>
+                  </div>
+                  <div class="special-item" title="Intelligence (Inteligencja): Zdolności naukowe, hakerskie i logiczne">
+                    <span class="special-name">IN - Intelligence</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+                      <span class="special-val">9</span>
+                    </div>
+                  </div>
+                  <div class="special-item" title="Agility (Zręczność): Zwinność, skradanie i szybkość reakcji">
+                    <span class="special-name">AG - Agility</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+                      <span class="special-val">8</span>
+                    </div>
+                  </div>
+                  <div class="special-item" title="Luck (Szczęście): Szansa na trafienia krytyczne i łut szczęścia">
+                    <span class="special-name">LK - Luck</span>
+                    <div class="special-val-bar">
+                      <div class="bar-bg"><div class="bar-fill" style="width: 50%;"></div></div>
+                      <span class="special-val">5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SKILLS -->
+              <div class="skills-box">
+                <h3 class="panel-title">Skills</h3>
+                <div class="skills-list">
+                  <div class="skill-item">
+                    <span class="skill-name">Science (Nauka)</span>
+                    <span class="skill-val">82%</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">Sneak (Skradanie)</span>
+                    <span class="skill-val">74%</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">Repair (Naprawa)</span>
+                    <span class="skill-val">68%</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">Outdoorsman (Sztuka Przetrwania)</span>
+                    <span class="skill-val">56%</span>
+                  </div>
+                  <div class="skill-item">
+                    <span class="skill-name">Speech (Retoryka)</span>
+                    <span class="skill-val">37%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TRAITS (Klikalne cechy z pop-upem) -->
+              <div class="traits-box" style="grid-column: span 2;">
+                <h3 class="panel-title">Traits (Click for Details)</h3>
+                <div class="traits-list">
+                  <div class="trait-badge" data-trait="finesse">Finesse</div>
+                  <div class="trait-badge" data-trait="night-person">Night Person</div>
+                  <div class="trait-badge" data-trait="bloody-mess">Bloody Mess</div>
+                  <div class="trait-badge" data-trait="kamikaze">Kamikaze</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 2: INVENTORY -->
+        <section id="view-inv" class="pip-view">
+          <div class="inv-layout">
+            
+            <!-- Items list -->
+            <div class="inv-list-panel">
+              <div class="inv-header-bar">
+                <span>Item</span>
+                <span style="text-align: right;">WT</span>
+                <span style="text-align: right;">VAL</span>
+              </div>
+              <div class="inv-scroll">
+                <div class="inv-item-row" data-item="matura">
+                  <span>Świadectwo maturalne</span>
+                  <span style="text-align: right;">2</span>
+                  <span style="text-align: right;">280</span>
+                </div>
+                <div class="inv-item-row" data-item="plyty-cd">
+                  <span>Sterta CD</span>
+                  <span style="text-align: right;">7</span>
+                  <span style="text-align: right;">100</span>
+                </div>
+                <div class="inv-item-row" data-item="prawo-jazdy">
+                  <span>Prawo jazdy</span>
+                  <span style="text-align: right;">1</span>
+                  <span style="text-align: right;">300</span>
+                </div>
+                <div class="inv-item-row" data-item="laptop">
+                  <span>Laptop</span>
+                  <span style="text-align: right;">4</span>
+                  <span style="text-align: right;">235</span>
+                </div>
+                <div class="inv-item-row" data-item="kurs-barmanski">
+                  <span>Kurs barmański</span>
+                  <span style="text-align: right;">1</span>
+                  <span style="text-align: right;">111</span>
+                </div>
+                <div class="inv-item-row" data-item="igla-nitka">
+                  <span>Igła i nitka</span>
+                  <span style="text-align: right;">3</span>
+                  <span style="text-align: right;">40</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item details panel -->
+            <div class="inv-detail-panel">
+              <h3 id="inv-desc-title" class="inv-desc-title">Item Details</h3>
+              <p id="inv-desc-body" class="inv-desc-body">
+                Wybierz przedmiot z listy po lewej stronie, aby wyświetlić jego parametry oraz opis techniczny.
+              </p>
+              <div class="inv-desc-meta">
+                <div style="display: flex; justify-content: space-between;">
+                  <span id="inv-desc-weight">W: 0</span>
+                  <span id="inv-desc-val">V: 0</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- VIEW 3: DATA (QUEST LOG) -->
+        <section id="view-quests" class="pip-view">
+          <div class="quest-layout">
+            
+            <!-- Quests Left Navigation -->
+            <div class="quest-nav">
+              <h3 class="panel-title">Active Quests</h3>
+              <div id="quest-list" class="inv-scroll">
+                <!-- Populated dynamically by JS -->
+              </div>
+            </div>
+
+            <!-- Quest Description and Operations -->
+            <div class="quest-content">
+              <div class="quest-desc-box">
+                <h3 id="quest-title-text" class="quest-title-text">QUEST LOG</h3>
+                <div id="quest-body-text" class="quest-body-text">
+                  Wybierz misję z listy po lewej stronie, aby zarządzać jej statusem lub usunąć ją z Dziennika Zadań RobCo.
+                </div>
+              </div>
+
+              <!-- Quest Creator Form -->
+              <div class="quest-creator">
+                <h4 class="panel-title" style="margin-bottom: 8px;">Add New Quest</h4>
+                <form id="quest-add-form" class="quest-creator-form">
+                  <input type="text" id="quest-add-input" class="quest-input" placeholder="Quest name / Objective..." required>
+                  <button type="submit" class="btn-add-quest">ADD</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- VIEW 4: SYSTEM (INSTALLED AI MODELS) -->
+        <section id="view-models" class="pip-view">
+          <div class="models-layout">
+            <h3 class="panel-title">Installed AI Subroutines</h3>
+            <div class="models-grid">
+              
+              <!-- ChatGPT -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">ChatGPT</span>
+                  <span class="model-ver">v4/o/5</span>
+                </div>
+                <p class="model-desc">
+                  Uniwersalny model konwersacyjny od OpenAI. Podstawowe narzędzie do codziennej pracy, pisania maili i ogólnej burzy mózgów.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>4/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+              <!-- NotebookLM -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">NotebookLM</span>
+                  <span class="model-ver">v4.0</span>
+                </div>
+                <p class="model-desc">
+                  Twój spersonalizowany asystent badawczy od Google. Idealny do syntezy obszernych dokumentów, notatek i generowania podcastów audio.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>4/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+              <!-- Perplexity -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">Perplexity</span>
+                  <span class="model-ver">v3.0</span>
+                </div>
+                <p class="model-desc">
+                  Wyszukiwarka oparta na sztucznej inteligencji. Dostarcza szybkich, zorientowanych na źródła odpowiedzi bezpośrednio z sieci.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>3/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+              <!-- Antigravity -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">Antigravity</span>
+                  <span class="model-ver">v2.0</span>
+                </div>
+                <p class="model-desc">
+                  Potężny agent kodowania zaprojektowany przez Google DeepMind. Bezcenne wsparcie w programowaniu i automatyzacji.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>2/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+              <!-- TrevorAI -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">TrevorAI</span>
+                  <span class="model-ver">v3.0</span>
+                </div>
+                <p class="model-desc">
+                  Planer zadań oparty na AI. Pomaga w inteligentnym blokowaniu czasu i integracji kalendarza z listą priorytetów.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>3/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+              <!-- Claude -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">Claude</span>
+                  <span class="model-ver">v2.0</span>
+                </div>
+                <p class="model-desc">
+                  Model językowy o wysokiej spójności logicznej od Anthropic. Świetny do tworzenia obszernych artykułów i analizowania kodu.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>2/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+              <!-- Nano banana -->
+              <div class="model-card">
+                <div class="model-card-header">
+                  <span class="model-name">Nano banana</span>
+                  <span class="model-ver">v1.0</span>
+                </div>
+                <p class="model-desc">
+                  Ultralekki i zabawny model pomocniczy. Niewielki wpływ na system operacyjny, ale zawsze poprawia humor.
+                </p>
+                <div class="model-scale-label">
+                  <span>Proficiency (Biegłość)</span>
+                  <span>1/5</span>
+                </div>
+                <div class="model-blocks-rating">
+                  <span class="model-rating-block filled"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                  <span class="model-rating-block"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- BOTTOM CONTROL PANEL / FOOTER -->
+      <footer class="pip-footer">
+        <!-- Links -->
+        <div class="footer-links">
+          <a href="mailto:martyna.chudanska@gmail.com" class="footer-link">EMAIL</a>
+          <a href="https://discord.com" class="footer-link" title="User: 4adler4">DISCORD</a>
+          <a href="https://github.com/chvdanska" target="_blank" class="footer-link">GITHUB</a>
+        </div>
+
+        <!-- Synthesized hum and music audio elements -->
+        <audio id="radio-audio" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
+
+        <!-- Mechanical Controls -->
+        <div class="audio-controls">
+          <button id="btn-hum-toggle" class="dial-btn">HUM: ON</button>
+          <button id="btn-music-toggle" class="dial-btn">RADIO: PLAY</button>
+          <div style="display: flex; gap: 4px;">
+            <button id="vol-music-down" class="dial-btn" title="Głośność muzyki dół">VOL-</button>
+            <button id="vol-music-up" class="dial-btn" title="Głośność muzyki góra">VOL+</button>
+          </div>
+        </div>
+
+        <span style="opacity: 0.6; font-size: 11px;">// Sektor: Tokyo-III</span>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- TRAITS DETAILS MODAL -->
+  <div id="traits-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-btn">&times;</button>
+      <h3 id="modal-title" class="modal-title">Trait Title</h3>
+      <div id="modal-desc" class="modal-body">
+        Trait description content goes here.
+      </div>
+      <div id="modal-effect" class="modal-effect">
+        EFEKT: +10% Critical Chance
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
